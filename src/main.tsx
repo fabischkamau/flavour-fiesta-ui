@@ -33,6 +33,10 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
+    path: "/preferences",
+    element: <UserPreferences />,
+  },
+  {
     element: <AuthLayout />,
     children: [
       {
@@ -43,10 +47,7 @@ const router = createBrowserRouter([
         path: "/search",
         element: <SearchRecipes />,
       },
-      {
-        path: "/preferences",
-        element: <UserPreferences />,
-      },
+      
       {
         path: "/meal-planner",
         element: <MealPlannerPage />,
