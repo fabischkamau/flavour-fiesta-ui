@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import {  useMutation, gql } from "@apollo/client";
 
 const POST_QUESTION = gql`
   mutation ($question: String!, $thread_id: String) {
