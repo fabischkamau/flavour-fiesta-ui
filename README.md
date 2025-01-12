@@ -1,4 +1,4 @@
-# Vite Web App: Recipe and Meal Planning Manager
+# Flavour Fiesta: Recipe and Meal Planning Manager
 
 ## Introduction
 

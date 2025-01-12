@@ -18,7 +18,7 @@ import MealPlannerById from "./pages/MealPlannerById.tsx";
 import RecipePage from "./pages/RecipePage.tsx";
 import Settings from "./pages/Settings.tsx";
 import Profile from "./pages/Profile.tsx";
-
+//routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         path: "/search",
         element: <SearchRecipes />,
       },
-      
+
       {
         path: "/meal-planner",
         element: <MealPlannerPage />,
