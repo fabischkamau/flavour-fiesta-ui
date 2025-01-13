@@ -25,11 +25,6 @@ interface Recipe {
   favourite: boolean;
 }
 
-interface Recommendation {
-  recipe: Recipe;
-  score: number;
-}
-
 interface PersonalizedRecipeGridProps {
   userId: string;
   limit?: number;
@@ -39,26 +34,23 @@ interface PersonalizedRecipeGridProps {
 const GET_PERSONALIZED_RECOMMENDATIONS = gql`
   query ($userId: String!, $limit: Int!) {
     personalizedRecommendations(userId: $userId, limit: $limit) {
-      recipe {
-        id
-        name
-        difficulty
-        cookingTime
-        servingSize
-        calories
-        cost
-        popularityScore
-        seasonalAvailability
-        ingredients
-        cuisine
-        allergens
-        occasions
-        seasons
-        preparationSteps
-        rating
-        favourite
-      }
-      score
+      id
+      name
+      difficulty
+      cookingTime
+      servingSize
+      calories
+      cost
+      popularityScore
+      seasonalAvailability
+      ingredients
+      cuisine
+      allergens
+      occasions
+      seasons
+      preparationSteps
+      rating
+      favourite
     }
   }
 `;
@@ -69,7 +61,7 @@ const PersonalizedRecipeGrid: React.FC<PersonalizedRecipeGridProps> = ({
   className,
 }) => {
   const { loading, error, data } = useQuery<{
-    personalizedRecommendations: Recommendation[];
+    personalizedRecommendations: Recipe[];
   }>(GET_PERSONALIZED_RECOMMENDATIONS, {
     variables: { userId, limit },
   });
@@ -95,7 +87,7 @@ const PersonalizedRecipeGrid: React.FC<PersonalizedRecipeGridProps> = ({
         className
       )}
     >
-      {data?.personalizedRecommendations.map(({ recipe }) => (
+      {data?.personalizedRecommendations.map((recipe) => (
         <RecipeCard key={recipe.id} {...recipe} />
       ))}
     </div>

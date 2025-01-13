@@ -40,7 +40,7 @@ const GET_CUISINES = gql`
 `;
 
 export default function UserPreferences() {
-  const { userData } = useUser();
+  const { userData, setUserData } = useUser();
   const navigate = useNavigate();
   const [allergens, setAllergens] = useState<string[]>([]);
   const [favoriteCuisines, setFavoriteCuisines] = useState<string[]>([]);
@@ -66,7 +66,8 @@ export default function UserPreferences() {
         },
       });
       setIsSubmitting(false);
-      navigate("/home");
+      setUserData(null);
+      navigate("/confirm-email");
     } catch (error) {
       setIsSubmitting(false);
       console.error("Error creating user preferences:", error);
@@ -77,7 +78,7 @@ export default function UserPreferences() {
     <div className="min-h-screen bg-black text-white p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-          Set Your Culinary Preferences
+          Set Your Culinary Preferences for Personal Recomendations
         </h1>
         <form onSubmit={handleSubmit}>
           <PreferencesTabs

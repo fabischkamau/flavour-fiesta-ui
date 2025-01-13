@@ -18,6 +18,7 @@ import MealPlannerById from "./pages/MealPlannerById.tsx";
 import RecipePage from "./pages/RecipePage.tsx";
 import Settings from "./pages/Settings.tsx";
 import Profile from "./pages/Profile.tsx";
+import ConfirmEmail from "./pages/CornfirmEmail.tsx";
 //routes
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/preferences",
     element: <UserPreferences />,
+  },
+  {
+    path: "/confirm-email",
+    element: <ConfirmEmail />,
   },
   {
     element: <AuthLayout />,
