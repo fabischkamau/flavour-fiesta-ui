@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { gql } from "@apollo/client";
 import { Link } from "react-router-dom";
@@ -107,6 +107,9 @@ export function MealPlanner({
     setDeletingId(null);
   };
 
+  useEffect(() => {
+    refetch();
+  }, []);
   return (
     <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-4 text-white">Meal Plans</h2>

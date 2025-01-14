@@ -11,6 +11,7 @@ import { Input } from "../components/ui/input";
 import Label from "../components/ui/label";
 import { LoaderCircle, UserCircle } from "lucide-react";
 import { useUser } from "../context/auth";
+import UpdatePreferences from "../components/UpdatePreferences";
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
@@ -173,6 +174,8 @@ export default function Profile() {
             </form>
           </CardContent>
         </Card>
+
+        <UpdatePreferences />
       </div>
     </div>
   );
