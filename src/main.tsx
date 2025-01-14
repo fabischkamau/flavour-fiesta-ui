@@ -19,6 +19,7 @@ import RecipePage from "./pages/RecipePage.tsx";
 import Settings from "./pages/Settings.tsx";
 import Profile from "./pages/Profile.tsx";
 import ConfirmEmail from "./pages/CornfirmEmail.tsx";
+import EmailConfirmed from "./pages/EmailConfirmed.tsx";
 //routes
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/confirm-email",
     element: <ConfirmEmail />,
+  },
+  {
+    path: "/verify-success",
+    element: <EmailConfirmed />,
   },
   {
     element: <AuthLayout />,
